@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Summary</title>
+
+<style>
+table{
+  width:60%;
+  margin:auto;
+  border-collapse:collapse;
+}
+th,td{
+  border:1px solid #ccc;
+  padding:10px;
+  text-align:center;
+}
+th{
+  background:orange;
+  color:white;
+}
+.btn{
+  margin:20px auto;
+  display:block;
+  padding:10px 30px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 style="text-align:center;">Your Order Summary</h1>
+
+<table id="orderTable">
+<tr>
+  <th>Item</th>
+  <th>Price</th>
+  <th>Qty</th>
+  <th>Total</th>
+</tr>
+</table>
+
+<h3 style="text-align:center;">
+Grand Total ₹<span id="grandTotal">0</span>
+</h3>
+
+<form action="/confirm-order" method="post">
+  <button class="btn">Confirm Order</button>
+</form>
+
+<script>
+fetch("/order-data")
+.then(res => res.json())
+.then(items => {
+  const table = document.getElementById("orderTable");
+  let grandTotal = 0;
+
+  if(items.length === 0){
+    table.innerHTML += `<tr><td colspan="4">No items selected</td></tr>`;
+    return;
+  }
+
+  items.forEach(item => {
+    const total = item.price * item.qty;
+    grandTotal += total;
+
+    table.innerHTML += `
+      <tr>
+        <td>${item.name}</td>
+        <td>${item.price}</td>
+        <td>${item.qty}</td>
+        <td>${total}</td>
+      </tr>
+    `;
+  });
+
+  document.getElementById("grandTotal").innerText = grandTotal;
+});
+</script>
+
+</body>
+</html>

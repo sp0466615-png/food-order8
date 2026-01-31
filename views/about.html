@@ -1,0 +1,200 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        background: #0f172a;
+        color: #e5e7eb;
+    }
+
+    /* About Hero */
+    .about-hero {
+        padding: 80px 10%;
+        background: linear-gradient(135deg, #111, #1e1e1e);
+        color: #fff;
+    }
+
+    .about-content {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        /* Responsive */
+    }
+
+    .text h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+        text-transform: capitalize;
+    }
+
+    .text p {
+        font-size: 16px;
+        color: #ccc;
+        margin-bottom: 25px;
+        max-width: 450px;
+    }
+
+    /* Buttons */
+    .hero-buttons {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        padding: 14px 22px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn.primary {
+        background: linear-gradient(135deg, #ff7a18, #ff9f43);
+        color: #fff;
+    }
+
+    .btn.secondary {
+        border: 1px solid #ff7a18;
+        color: #ff9f43;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 122, 24, 0.4);
+    }
+
+    /* Badges */
+    .badges {
+        display: flex;
+        gap: 15px;
+        font-size: 14px;
+        color: #bbb;
+        flex-wrap: wrap;
+    }
+
+    .badges span {
+        background: #222;
+        padding: 8px 12px;
+        border-radius: 20px;
+    }
+
+    /* Image */
+    .image img {
+        width: 420px;
+        max-width: 100%;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    /* WHY US */
+    .why-us {
+        padding: 60px 10%;
+        background: #0f0f0f;
+        text-align: center;
+    }
+
+    .why-us h2 {
+        margin-bottom: 30px;
+        color: #ff9f43;
+    }
+
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+
+    .why-box {
+        background: #1c1c1c;
+        padding: 25px;
+        border-radius: 14px;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .why-box:hover {
+        transform: translateY(-6px);
+        background: #222;
+    }
+</style>
+
+
+<!-- ABOUT HERO SECTION -->
+<section class="about-hero">
+    <div class="about-content">
+
+        <div class="text">
+            <h1>We serve food that people love</h1>
+
+            <p>
+                Our mission is simple — create delicious food experiences using
+                fresh ingredients, honest recipes, and a passion for quality.
+            </p>
+
+            <!-- 🔥 NEW BUTTONS -->
+            <div class="hero-buttons">
+                <a href="/menu" class="btn primary">🍽 Order Now</a>
+                <a href="#why-us" class="btn secondary">⭐ Why Choose Us</a>
+            </div>
+
+            <!-- 🔥 TRUST BADGES -->
+            <div class="badges">
+                <span>🥗 Fresh Ingredients</span>
+                <span>⚡ Fast Delivery</span>
+                <span>⭐ 4.9 Rating</span>
+                <span>🌱 100% Vegetarian</span>
+                <span>🍛 Authentic Recipes</span>
+                <span>🧂 No Preservatives</span>
+                <span>🥘 Chef Special Dishes</span>
+                <span>🎁 Special Offers</span>
+                <span>💚 Eco-friendly Packaging</span>
+            </div>
+        </div>
+
+        <div class="image">
+            <img src="/food.png" alt="delicious food">
+        </div>
+
+    </div>
+</section>
+
+<!-- WHY US SECTION -->
+<section id="why-us" class="why-us">
+    <h2>Why People Love Our Food</h2>
+    <div class="why-grid">
+        <div class="why-box">👨‍🍳 Expert Chefs</div>
+        <div class="why-box">🔥 Freshly Cooked</div>
+        <div class="why-box">🚚 Quick Delivery</div>
+        <div class="why-box">❤️ Made with Love</div>
+        <div class="why-box">🌿 Healthy Ingredients</div>
+        <div class="why-box">🍽 Wide Variety</div>
+        <div class="why-box">💯 Quality Assurance</div>
+        <div class="why-box">🎉 Special Offers</div>
+        <div class="why-box">🕒 24/7 Availability</div>
+        <div class="why-box">🏆 Trusted by Customers</div>
+    </div>
+</section>
+
+
+</body>
+
+</html>
